@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.app.Employee" table="EmpTable">
+<id  name="empId" column="eid"></id>
+<property name="empName" column="ename"></property>
+<property name="empsal" column="esal"></property>
+<joined-subclass name="com.app.Developer" table="Developer">
+<key column="eid"/>
+<property name="techId" column="tid"></property>
+<property name="techName" column="tname"></property>
+<property name="exp" column="exp"></property>
+</joined-subclass>
+<joined-subclass name="com.app.Manager" table="Manager">
+<key column="eid"></key>
+<property name="projId" column="pid"></property>
+<property name="projName" column="pname"></property>
+</joined-subclass>
+</class>
+</hibernate-mapping>

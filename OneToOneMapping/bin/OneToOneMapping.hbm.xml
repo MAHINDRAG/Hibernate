@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.app.Employee" table="etable">
+<id name="empId" column="eid"/>
+<property name="empName" column="ename"/>
+<property name="empSal" column="esal"/>
+<many-to-one name="projId" column="pidkf" unique="true" cascade="all"/>
+</class>
+<class name="com.app.Project" table="ptable">
+<id name="projId" column="pid"/>
+<property name="projName" column="pname"/>
+</class>
+</hibernate-mapping>

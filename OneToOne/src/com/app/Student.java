@@ -1,0 +1,34 @@
+package com.app;
+
+public class Student {
+	private int id;
+	private String studentName;
+	private double fee;
+	private Address address;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getStudentName() {
+		return studentName;
+	}
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+	public double getFee() {
+		return fee;
+	}
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+
+}

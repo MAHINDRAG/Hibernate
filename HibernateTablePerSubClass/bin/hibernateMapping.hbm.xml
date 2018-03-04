@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.app.Employee" table="EMP_SUBCLASS_TABLE">
+		<id name="empId" column="eid">
+			<generator class="increment" />
+		</id>
+		<property name="empName" column="ename" />
+		<property name="empSal" column="esal" />
+		<joined-subclass name="com.app.Developer" table="DEV_SUBCLASS_TABLE">
+		<key column="eid"></key>
+			<property name="techId" column="tid" />
+			<property name="techName" column="tname" />
+			<property name="exp" />
+
+		</joined-subclass>
+		<joined-subclass name="com.app.Manager" table="MGR_SUBCLASS_TABLE">
+		<key column="eid"></key>
+			<property name="projId" column="pid" />
+			<property name="projName" column="pname" />
+		</joined-subclass>
+
+	</class>
+</hibernate-mapping>

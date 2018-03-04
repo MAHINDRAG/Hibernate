@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+	<class name="com.app.Student" table="STable">
+	<composite-id>
+	    <key-property name="stdId" column="sid1"/>
+	    <key-property name="stdName" column="sname1"/>
+	</composite-id>
+	<!-- <id name="stdId" column="sid"></id> -->
+	<!-- <property name="stdName" column="sname"></property> -->
+	<property name="stdFee" column="sfee"></property>
+	</class>
+</hibernate-mapping>

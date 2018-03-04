@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.app.Question" table="MQTable">
+		<id name="id" column="Qid">
+			<!-- <generator class="increment" /> -->
+		</id>
+		<property name="name" column="Qname" />
+
+	</class>
+	<class name="com.app.Answer" table="MAnswerTable">
+		<id name="id" column="aid">
+			<!-- <generator class="increment" /> -->
+		</id>
+		<property name="answerName" column="aname" />
+		<property name="postedby" column="pname" />
+		<many-to-one name="parentobjects" class="com.app.Question" column="pobjects" cascade="all"/>
+	</class>
+</hibernate-mapping>

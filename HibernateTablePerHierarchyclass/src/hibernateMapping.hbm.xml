@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.app.Employee" table="EMP_HIERARCHY_TABLE"
+		discriminator-value="emp">
+		<id name="empId" column="eid" />
+		<discriminator column="data" type="java.lang.String" />
+		<property name="empName" column="ename" />
+		<property name="empSal" column="esal" />
+		<subclass name="com.app.Developer" discriminator-value="dev">
+			<property name="techId" column="tid" />
+			<property name="techName" column="tname" />
+			<property name="exp" column="exp" />
+		</subclass>
+		<subclass name="com.app.Manager" discriminator-value="mgr">
+			<property name="projId" column="pid" />
+			<property name="projName" column="pname" />
+		</subclass>
+	</class>
+
+</hibernate-mapping>

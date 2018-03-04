@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+<defaultcache maxElementsInMemory="100"	 eternal="true"></defaultcache>
+<cache name="com.app.Product" maxElementsInMemory="100"	eternal="true"></cache>
+</ehcache>

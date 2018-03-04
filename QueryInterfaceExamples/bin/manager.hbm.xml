@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.app.query.Manager" table="ManagerInfo">
+		<id name="mgrID" column="ManagerID">
+			<generator class="increment" />
+		</id>
+		<property name="mgrName" column="ManagerName" />
+		<property name="mgrCity" column="ManagerCity" />
+	</class>
+</hibernate-mapping>

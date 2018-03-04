@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.app.cascade.Stock" table="STOCK">
+		<id name="stockId" type="java.lang.Integer">
+			<column name="STOCK_ID" />
+			<generator class="Increment" />
+		</id>
+		<property name="stockCode" type="java.lang.String">
+			<column name="STOCK_CODE" length="10" not-null="true" unique="true" />
+		</property>
+		<property name="stockName" type="java.lang.String">
+			<column name="STOCK_NAME" length="20" not-null="true" unique="true" />
+		</property>
+		<set name="stockDailyRecords" table="stock_daily_record" inverse="true"
+			lazy="true">
+			<key column="STOCK_ID" not-null="true" />
+			<one-to-many class="com.app.cascade.StockDailyRecords" />
+		</set>
+	</class>
+	<class name="com.app.cascade.StockDailyRecords" table="stock_daily_record">
+	  <id name="recordId" column="RECORD_ID" type="java.lang.Integer">
+	    <generator class="Increment"></generator>
+	  </id>
+	  <property name="priceOpen" column="PRICE_OPEN" type="java.lang.Float"  precision="6" />
+	  <property name="priceClose" column="PRICE_CLOSE" type="java.lang.Float" precision="6"/>
+	   <property name="priceChange" type="java.lang.Float">
+            <column name="PRICE_CHANGE" precision="6" />
+        </property>
+        <property name="volume" type="java.lang.Long">
+            <column name="VOLUME" />
+        </property>
+        <property name="date" type="date">
+            <column name="DATE" length="10" not-null="true" unique="true" />
+        </property>
+	</class>
+</hibernate-mapping>
